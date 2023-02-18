@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <map>
 
+#pragma warning(disable: 4996)
 
 struct task_status
 {
