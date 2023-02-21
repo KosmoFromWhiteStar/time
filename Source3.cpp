@@ -20,10 +20,17 @@ int  main()
 	end_timer.tm_min += temp.tm_min;
 	end_timer.tm_sec += temp.tm_sec;
 
-	
+	int sec = 0;
+	std::time_t now = std::time(nullptr);
 	while (true)
 	{
 		if (std::time(nullptr) == std::mktime(&end_timer)) break;
+		else if ((std::time(nullptr) - now) == 1)
+		{
+			std::cout << "Sec: " << sec << std::endl;
+			sec++;
+			now = std::time(nullptr);
+		}
 	}
 	std::cout << "Ding! Ding! Ding!";
 	return 0;

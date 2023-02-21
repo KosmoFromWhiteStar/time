@@ -20,15 +20,16 @@ int main()
         std::time_t birthday = std::time(nullptr);
         std::tm date = *std::localtime(&birthday);
 
-        std::cout << "Input birthday name name of your friend: " << std::endl;
-        std::cout << "Day.month.year format" << std::endl;
-
-        //ввод данных
-        std::cin >> std::get_time(&date, "%d.%m.%Y");
+        std::cout << "Input name and birthday of your friend: " << std::endl;
         std::string name;
         std::cin >> name;
         if (name == "end") goto nex;
 
+        std::cout << "Day.month.year format" << std::endl;
+
+        //ввод данных
+        std::cin >> std::get_time(&date, "%d.%m.%Y");
+        
 
         //инициализация дат рождения в мапу
         date.tm_hour = 0;
